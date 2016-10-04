@@ -9,11 +9,14 @@ String[] url= new String[0];
 String[] validURL=new String[numCameras];
 PVector[] pos= new PVector[numCameras];
 PVector presentationPos;
-IntList posOrder=new IntList(0, 1, 2, 3, 4, 5, 6);
+
+IntList posOrder=new IntList(0, 1, 2, 3, 4, 5, 6);//only 7, keep main in center
 int counter=0;
+int lastChange=0;
+int randomChange=0;
 
 boolean presentationMode=false;
-int totalSlides=8;
+int totalSlides=9;
 boolean movieIsPlaying=false;
 Movie movie;
 
@@ -48,11 +51,12 @@ void drawCameras() {
     counter=0;
     posOrder.shuffle();
     numCameras=testCamera();
+    randomChange=int(random(numProjections-1));
   }
   int cameraToProject=0;//number of projected cameras
   int cycles=0;//fill all projection frames with cameras, even if they are repeated.
 
-  background(20);
+  background(0);
   for (int i=0; i<numProjections; i++) {
     try {
       if (i>numCameras*cycles) {
@@ -65,7 +69,8 @@ void drawCameras() {
         image(webImg, pos[posOrder.get(i)].x, pos[posOrder.get(i)].y, pos[posOrder.get(i)].z, pos[posOrder.get(i)].z*.65);
       }
 
-      if (i==numProjections-1 && presentationMode==false) {
+      //if (i==numProjections-1 && presentationMode==false) {
+      if (i==randomChange && presentationMode==false) {
         image(webImg, presentationPos.x, presentationPos.y, presentationPos.z, presentationPos.z*.65);
       }
       filter(GRAY);
@@ -79,7 +84,7 @@ void drawCameras() {
       numCameras=testCamera();
     }
   }
-  delay(10);
+  // delay(10);
   counter++;
 }
 
@@ -92,6 +97,10 @@ void keyPressed() {
     }
   }
   if (keyCode== RIGHT) {
+    if (presentationMode==false) {
+      presentationMode=true;
+      return;
+    }
     if (movieIsPlaying) {
       movieIsPlaying=false;
       movie.stop();

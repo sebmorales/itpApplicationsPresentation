@@ -6,7 +6,7 @@ void loadSlide() {
   }
   catch(Exception e) {
     try {
-      String newPath=currentSlide+".mov";
+      String newPath=currentSlide+".m4v";
       movie = new Movie(this, newPath);
       movie.loop();
       movieIsPlaying=true;

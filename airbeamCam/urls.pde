@@ -1,20 +1,9 @@
 void loadURLs() {
-  //url[0]=new URL("http://google.com");
-  //url[0]=new URL("http://172.16.226.186/service/camera/image.jpg");
-  //url[1]=new URL("http://172.16.250.135/service/camera/image.jpg");
-  //url[2]=new URL("http://172.16.249.45:8124/service/camera/image.jpg");
-  //url=append(url, "http://172.16.250.186/service/camera/image.jpg");
-  url=append(url, "http://172.16.252.154/service/camera/image.jpg");
+  //url=append(url, "http://172.16.219.163/service/camera/image.jpg");
+  //url=append(url, "http://172.16.219.32/service/camera/image.jpg");
+  //url=append(url, "http://172.16.252.154/service/camera/image.jpg");
   url=append(url, "http://172.16.249.205:8124/service/camera/image.jpg");
-  //url[0]= "http://172.16.226.186/service/camera/image.jpg";
-  ////url[1]= "http://172.16.250.135:8080/video.jpeg";
-  //url[1]= "http://172.16.249.45:8124/service/camera/image.jpg";
-  //url[2]= "http://172.16.249.45:8124/service/camera/image.jpg";
-  //url[3]= "http://172.16.249.45:8124/service/camera/image.jpg";
-  //url[4]= "http://172.16.250.135/service/camera/image.jpg";
-  //url[5]= "http://172.16.250.135/service/camera/image.jpg";
-  //url[6]= "http://172.16.226.186/service/camera/image.jpg";
-  //url[7]= "http://172.16.250.135/service/camera/image.jpg";
+  //url=append(url, "http://172.16.229.175:8124/service/camera/image.jpg");
 }
 
 void positionCameras() {
